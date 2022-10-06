@@ -16,3 +16,22 @@ class priorityQueue:
         else:  
             return False  
 class nodes:  
+    def __init__(self, parent, mats, empty_tile_posi, costs, levels):  
+        self.parent = parent  
+        self.mats = mats   
+        self.empty_tile_posi = empty_tile_posi  
+        self.costs = costs  
+        self.levels = levels  
+    def __lt__(self, nxt):  
+        return self.costs < nxt.costs  
+   
+def calculateCosts(mats, final) -> int:  
+      
+    count = 0  
+    for i in range(n):  
+        for j in range(n):  
+            if ((mats[i][j]) and  
+                (mats[i][j] != final[i][j])):  
+                count += 1  
+                  
+    return count  
