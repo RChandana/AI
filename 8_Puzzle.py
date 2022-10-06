@@ -35,3 +35,20 @@ def calculateCosts(mats, final) -> int:
                 count += 1  
                   
     return count  
+def newNodes(mats, empty_tile_posi, new_empty_tile_posi, levels, parent, final) -> nodes:  
+    new_mats = copy.deepcopy(mats)  
+    x1 = empty_tile_posi[0]  
+    y1 = empty_tile_posi[1]  
+    x2 = new_empty_tile_posi[0]  
+    y2 = new_empty_tile_posi[1]  
+    new_mats[x1][y1], new_mats[x2][y2] = new_mats[x2][y2], new_mats[x1][y1]  
+  
+    costs = calculateCosts(new_mats, final)  
+  
+    new_nodes = nodes(parent, new_mats, new_empty_tile_posi, costs, levels)  
+    return new_nodes  
+def printMatsrix(mats):  
+      
+    for i in range(n):  
+        for j in range(n):  
+            print("%d " % (mats[i][j]), end = " ")  
