@@ -52,7 +52,8 @@ def printMatsrix(mats):
     for i in range(n):  
         for j in range(n):  
             print("%d " % (mats[i][j]), end = " ")
-            def isSafe(x, y):  
+       
+def isSafe(x, y):  
       
     return x >= 0 and x < n and y >= 0 and y < n  
    
