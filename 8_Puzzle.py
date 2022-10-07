@@ -65,3 +65,20 @@ def printPath(root):
     printPath(root.parent)  
     printMatsrix(root.mats)  
     print()
+    
+def solve(initial, empty_tile_posi, final): 
+    pq = priorityQueue()  
+    costs = calculateCosts(initial, final)  
+    root = nodes(None, initial,  
+                empty_tile_posi, costs, 0)  
+    pq.push(root)  
+    while not pq.empty():  
+        minimum = pq.pop()  
+        if minimum.costs == 0:   
+            printPath(minimum)  
+            return  
+        for i in range(n):  
+            new_tile_posi = [  
+                minimum.empty_tile_posi[0] + rows[i],  
+                minimum.empty_tile_posi[1] + cols[i], ]  
+                  
