@@ -81,4 +81,21 @@ def solve(initial, empty_tile_posi, final):
             new_tile_posi = [  
                 minimum.empty_tile_posi[0] + rows[i],  
                 minimum.empty_tile_posi[1] + cols[i], ]  
+            if isSafe(new_tile_posi[0], new_tile_posi[1]):  
+                child = newNodes(minimum.mats,  
+                                minimum.empty_tile_posi,  
+                                new_tile_posi,  
+                                minimum.levels + 1,  
+                                minimum, final,)  
+                pq.push(child)  
+  
+initial = [ [ 1, 2, 3 ],  
+            [ 5, 6, 0 ],  
+            [ 7, 8, 4 ] ]  
+final = [ [ 1, 2, 3 ],  
+        [ 5, 8, 6 ],  
+        [ 0, 7, 4 ] ]  
+        
+empty_tile_posi = [ 1, 2 ]  
+solve(initial, empty_tile_posi, final)    
                   
