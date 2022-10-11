@@ -25,3 +25,14 @@ public class BinaryTree {
               root = newNode;  
               return;  
           } 
+          else {  
+             Queue<Node> queue = new LinkedList<Node>();  
+             queue.add(root);  
+               
+             while(true) {  
+                 
+                 Node node = queue.remove();  
+                 if(node.left != null && node.right != null) {  
+                     queue.add(node.left);  
+                     queue.add(node.right);  
+              }  
