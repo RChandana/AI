@@ -64,3 +64,26 @@ public class BinaryTree {
                   inorder(node.right);      
               }        
           }  
+   
+      public static void main(String[] args) {  
+        BinaryTree bt = new BinaryTree();
+        bt.insertNode(10); 
+        System.out.println("Binary tree after first Insertion : "); 
+        bt.inorder(bt.root);  
+          
+        bt.insertNode(15);  
+        bt.insertNode(20); 
+        System.out.println("\nBinary tree after second Insertion : ");
+        bt.inorder(bt.root);  
+          
+        bt.insertNode(11);  
+        bt.insertNode(14);
+        System.out.println("\nBinary tree after third Insertion : ");
+        bt.inorder(bt.root);  
+          
+        bt.insertNode(17);  
+        bt.insertNode(19); 
+        System.out.println("\nBinary tree after fourth Insertion : ");
+        bt.inorder(bt.root);
+      }  
+    }
