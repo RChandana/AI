@@ -36,3 +36,18 @@ public class BinaryTree {
                      queue.add(node.left);  
                      queue.add(node.right);  
               }  
+                
+                else {  
+                    if(node.left == null) {  
+                         node.left = newNode;  
+                         queue.add(node.left);  
+                     }
+                     else {  
+                         node.right = newNode;  
+                         queue.add(node.right);  
+                     }  
+                     break;  
+                 }  
+             }  
+          }  
+      }
