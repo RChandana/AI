@@ -19,3 +19,9 @@ public class BinaryTree {
       public BinaryTree(){  
         root = null;  
       }
+      public void insertNode(int data) {  
+          Node newNode = new Node(data);  
+          if(root == null){  
+              root = newNode;  
+              return;  
+          } 
