@@ -51,3 +51,16 @@ public class BinaryTree {
              }  
           }  
       }
+   public void inorder(Node node) {
+          if(root == null){  
+              System.out.println("Tree is empty");  
+              return;  
+          }  
+          else {   
+              if(node.left!= null)  
+                  inorder(node.left);  
+              System.out.print(node.data + " ");  
+              if(node.right!= null)  
+                  inorder(node.right);      
+              }        
+          }  
