@@ -52,3 +52,17 @@ def hill_Climbing(travelling_salesman_problem):
 
     return current_Solution, current_Route_Length
 
+def main():
+    travelling_salesman_problem = [
+        [0, 1200, 2000, 1600, 2500],
+        [1200, 0, 2500, 1600, 2000],
+        [2500, 2000, 1600, 0, 1200],
+        [1600, 2000, 2500, 1200, 0],
+        [2000, 2500, 1200, 0, 1600]
+    ]
+
+    print(hill_Climbing(travelling_salesman_problem))
+
+if __name__ == "__main__":
+    main()
+
