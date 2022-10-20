@@ -58,3 +58,17 @@ class Graph:
                     open_list.add(m)
                     parents[m] = n
                     g[m] = g[n] + weight
+                    
+                    else:
+                    if g[m] > g[n] + weight:
+                        g[m] = g[n] + weight
+                        parents[m] = n
+
+                        if m in closed_list:
+                            closed_list.remove(m)
+                            open_list.add(m)
+            open_list.remove(n)
+            closed_list.add(n)
+
+        print('Path does not exist!')
+        return None
