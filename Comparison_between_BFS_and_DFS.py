@@ -34,3 +34,14 @@ print("Breadth first search algorithm: ")
 breadth_first_search([], graph, 'A')
 
 visited = set()
+
+def depth_first_search(visited, graph, node):
+    if node not in visited:
+        print(node)
+        visited.add(node)
+        for neighbour in graph[node]:
+            depth_first_search(visited, graph, neighbour)
+
+
+print("Depth first search algorithm: ")
+depth_first_search(visited, graph, 'A')
