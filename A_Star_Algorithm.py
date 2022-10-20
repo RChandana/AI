@@ -59,7 +59,7 @@ class Graph:
                     parents[m] = n
                     g[m] = g[n] + weight
                     
-                    else:
+                 else:
                     if g[m] > g[n] + weight:
                         g[m] = g[n] + weight
                         parents[m] = n
@@ -73,7 +73,7 @@ class Graph:
         print('Path does not exist!')
         return None
     
-    adjacency_list = {
+adjacency_list = {
     'A': [('B', 6), ('F', 3)],
     'B': [('A', 6), ('C', 3), ('D', 2)],
     'C': [('B', 3), ('D', 1), ('E', 5)],
