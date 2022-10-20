@@ -20,3 +20,22 @@ class Graph:
             'J': 0
         }
         return H[n]
+
+    def a_star_algorithm(self, start_node, stop_node):
+        open_list = set([start_node])
+        closed_list = set([])
+        g = {}
+
+        g[start_node] = 0
+        parents = {}
+        parents[start_node] = start_node
+
+        while len(open_list) > 0:
+            n = None
+            for v in open_list:
+                if n == None or g[v] + self.h(v) < g[n] + self.h(n):
+                    n = v;
+
+            if n == None:
+                print('Path does not exist!')
+                return None
