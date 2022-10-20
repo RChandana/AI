@@ -39,3 +39,22 @@ class Graph:
             if n == None:
                 print('Path does not exist!')
                 return None
+
+            if n == stop_node:
+                reconst_path = []
+
+                while parents[n] != n:
+                    reconst_path.append(n)
+                    n = parents[n]
+
+                reconst_path.append(start_node)
+
+                reconst_path.reverse()
+
+                print('Path found: {}'.format(reconst_path))
+                return reconst_path
+            for (m, weight) in self.get_neighbors(n):
+                if m not in open_list and m not in closed_list:
+                    open_list.add(m)
+                    parents[m] = n
+                    g[m] = g[n] + weight
