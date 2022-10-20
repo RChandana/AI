@@ -72,3 +72,17 @@ class Graph:
 
         print('Path does not exist!')
         return None
+    
+    adjacency_list = {
+    'A': [('B', 6), ('F', 3)],
+    'B': [('A', 6), ('C', 3), ('D', 2)],
+    'C': [('B', 3), ('D', 1), ('E', 5)],
+    'D': [('B', 2), ('C', 1), ('E', 8)],
+    'E': [('C', 5), ('D', 8), ('I', 5), ('J', 5)],
+    'F': [('A', 3), ('G', 1), ('H', 7)],
+    'G': [('F', 1), ('I', 3)],
+    'H': [('F', 7), ('I', 2)],
+    'I': [('E', 5), ('G', 3), ('H', 2), ('J', 3)],
+}
+graph1 = Graph(adjacency_list)
+graph1.a_star_algorithm('A', 'J')
