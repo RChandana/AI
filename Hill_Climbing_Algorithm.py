@@ -27,3 +27,18 @@ def get_Neighbours(solution):
             neighbour[j] = solution[i]
             neighbours.append(neighbour)
     return neighbours
+def get_Best_Neighbour(travelling_salesman_problem, neighbours):
+    best_Route_Length = route_Length(travelling_salesman_problem, neighbours[0])
+    best_Neighbour = neighbours[0]
+    for neighbour in neighbours:
+        current_Route_Length = route_Length(travelling_salesman_problem, neighbour)
+        if current_Route_Length < best_Route_Length:
+            best_Route_Length = current_Route_Length
+            best_Neighbour = neighbour
+    return best_Neighbour, best_Route_Length
+
+def hill_Climbing(travelling_salesman_problem):
+    current_Solution = random_Solution(travelling_salesman_problem)
+    current_Route_Length = route_Length(travelling_salesman_problem, current_Solution)
+    neighbours = get_Neighbours(current_Solution)
+    best_Neighbour, best_Neighbour_Route_Length = get_Best_Neighbour(travelling_salesman_problem, neighbours)
