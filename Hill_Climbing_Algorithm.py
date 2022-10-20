@@ -11,3 +11,19 @@ def random_Solution(travelling_salesman_problem):
         cities.remove(random_City)
 
     return solution
+
+def route_Length(travelling_salesman_problem, solution):
+    route_Length = 0
+    for i in range(len(solution)):
+        route_Length += travelling_salesman_problem[solution[i - 1]][solution[i]]
+    return route_Length
+
+def get_Neighbours(solution):
+    neighbours = []
+    for i in range(len(solution)):
+        for j in range(i + 1, len(solution)):
+            neighbour = solution.copy()
+            neighbour[i] = solution[j]
+            neighbour[j] = solution[i]
+            neighbours.append(neighbour)
+    return neighbours
