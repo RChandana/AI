@@ -42,3 +42,13 @@ def hill_Climbing(travelling_salesman_problem):
     current_Route_Length = route_Length(travelling_salesman_problem, current_Solution)
     neighbours = get_Neighbours(current_Solution)
     best_Neighbour, best_Neighbour_Route_Length = get_Best_Neighbour(travelling_salesman_problem, neighbours)
+    
+    
+    while best_Neighbour_Route_Length < current_Route_Length:
+        current_Solution = best_Neighbour
+        current_Route_Length = best_Neighbour_Route_Length
+        neighbours = get_Neighbours(current_Solution)
+        best_Neighbour, best_Neighbour_Route_Length = get_Best_Neighbour(travelling_salesman_problem, neighbours)
+
+    return current_Solution, current_Route_Length
+
