@@ -22,3 +22,13 @@ def solve_8_Queen_Util(board, col):
             board[i][col] = 0 
             left_diagonal[i - col + N - 1] = right_diagonal[i + col] = column[i] = 0
             return False
+
+def solve_8_Queen():
+	board = [[0, 0, 0, 0, 0, 0, 0, 0],
+	         [0, 0, 0, 0, 0, 0, 0, 0],
+	         [0, 0, 0, 0, 0, 0, 0, 0],
+		 [0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0],
+	         [0, 0, 0, 0, 0, 0, 0, 0],
+		 [0, 0, 0, 0, 0, 0, 0, 0],
+		 [0, 0, 0, 0, 0, 0, 0, 0]]
