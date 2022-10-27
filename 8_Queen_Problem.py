@@ -32,3 +32,10 @@ def solve_8_Queen():
 	         [0, 0, 0, 0, 0, 0, 0, 0],
 		 [0, 0, 0, 0, 0, 0, 0, 0],
 		 [0, 0, 0, 0, 0, 0, 0, 0]]
+	if (solve_8_Queen_Util(board, 0) == False):
+		print_function("Solution does not exist")
+		return False
+	print_Solution(board)
+	return True
+solve_8_Queen()
+
