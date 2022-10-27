@@ -10,3 +10,15 @@ def print_Solution(board):
 			print(board[i][j], end = " ")
 		print()
  
+def solve_8_Queen_Util(board, col):
+    if (col >= N):
+        return True
+    for i in range(N):
+        if ((left_diagonal[i - col + N - 1] != 1 and right_diagonal[i + col] != 1) and column[i] != 1):
+            board[i][col] = 1
+            left_diagonal[i - col + N - 1] = right_diagonal[i + col] = column[i] = 1
+            if (solve_8_Queen_Util(board, col + 1)):
+                return True
+            board[i][col] = 0 
+            left_diagonal[i - col + N - 1] = right_diagonal[i + col] = column[i] = 0
+            return False
