@@ -1,3 +1,5 @@
+# This algorithm contains 8 Queen problem which uses Backtracking to solve the problem.
+
 from __future__ import print_function
 N = 8
 left_diagonal = [0] * 30
