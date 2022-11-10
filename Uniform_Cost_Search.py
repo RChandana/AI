@@ -23,3 +23,20 @@ def search(graph, start, end):
             temp = node[1][:]
             temp.append(neighbor)
             queue.put((cost + graph[current][neighbor], temp))
+            
+def read_Graph():
+    lines = int( input() )
+    graph = {}
+    
+    for line in range(lines):
+        line = input()
+            
+        tokens = line.split()
+        node = tokens[0]
+        graph[node] = {}
+        
+        for i in range(1, len(tokens) - 1, 2):
+            # print(node, tokens[i], tokens[i + 1])
+            # graph.addEdge(node, tokens[i], int(tokens[i + 1]))
+            graph[node][tokens[i]] = int(tokens[i + 1])
+    return graph
