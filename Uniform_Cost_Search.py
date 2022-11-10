@@ -1,6 +1,4 @@
-''' Considering the following Map to solve the Uniform Cost Search '''
-
-'''  '''
+''' Considering the Map that is there in README to solve the Uniform Cost Search '''
 
 import queue as Q
 def search(graph, start, end):
