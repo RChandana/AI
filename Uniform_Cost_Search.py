@@ -40,3 +40,10 @@ def read_Graph():
             # graph.addEdge(node, tokens[i], int(tokens[i + 1]))
             graph[node][tokens[i]] = int(tokens[i + 1])
     return graph
+
+def main():
+    graph = read_Graph()
+    search(graph, 'Arad', 'Bucharest')
+    
+if __name__ == "__main__":
+    main()
