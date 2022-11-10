@@ -1,3 +1,7 @@
+''' Considering the following Map to solve the Uniform Cost Search '''
+
+'''  '''
+
 import queue as Q
 def search(graph, start, end):
     if start not in graph:
